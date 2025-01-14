@@ -1,3 +1,10 @@
+> [!WARNING]
+> This already exists.
+
+```sh
+uvx --from=ast-grep-cli ast-grep
+```
+
 # ast-grep
 
 ast-grep is a CLI tool for code structural search, lint, and rewriting.
