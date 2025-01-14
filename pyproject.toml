@@ -1,0 +1,28 @@
+[build-system]
+requires = ["maturin>=1.7,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "ast-grep"
+description = "A CLI tool for code structural search, lint, and rewriting."
+authors = [{ name = "Trevor Manz", email = "trevor.j.manz@gmail.com" }]
+requires-python = ">=3.8"
+keywords = ["ast-grep", "linting"]
+dynamic = ["version"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
+
+[tool.maturin]
+bindings = "bin"
+manifest-path = "ast-grep/crates/cli/Cargo.toml"
+python-source = "python"
+include = [
+    { path = "rust-toolchain.toml", format = ["sdist", "wheel"] },
+    { path = "LICENSE-APACHE", format = "sdist" },
+    { path = "LICENSE-MIT", format = "sdist" },
+    { path = "ast-grep/README.md", format = "sdist" },
+    { path = "ast-grep/LICENSE", format = "sdist" },
+]
